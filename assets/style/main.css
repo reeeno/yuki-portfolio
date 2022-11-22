@@ -1,0 +1,47 @@
+/*body {
+  background-color: #E0E2ED;
+}*/
+
+h1, h2, h3, h4, h5 {
+  font-family: 'IM Fell English', serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 45px;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 35px;
+}
+
+h5 {
+  font-size: 30px;
+}
+
+p {
+  font-family: 'Alice', serif;
+  font-weight: 400;
+}
+
+/* Disable ripple effects on all buttons */
+.v-btn:before {
+  opacity: 0 !important;
+}
+
+.v-ripple__container {
+  opacity: 0 !important;
+}
+
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
