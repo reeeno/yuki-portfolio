@@ -7,13 +7,10 @@
       nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/'}" to="/" ) Home
       nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/works'}" to="/works" ) Work
       nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/playground'}" to="/playground" ) Playground
-      v-btn( icon style="text-decoration: none;" class="ma-n2" href="https://www.instagram.com/" )
+      v-btn( icon style="text-decoration: none;" class="ma-n2" href="https://www.instagram.com/ikkkkyui/" )
         v-icon( small ) mdi-instagram
-      v-btn( icon style="text-decoration: none;" class="ml-n2 mr-3" href="https://www.linkedin.com/" )
+      v-btn( icon style="text-decoration: none;" class="ml-n2 mr-3" href="https://www.linkedin.com/in/yutian-yuki-liu/" )
         v-icon( small ) mdi-linkedin
-      //a( style="text-decoration: none;" href="https://www.linkedin.com/" )
-      //  v-btn( icon )
-      //    v-icon( small ) mdi-linkedin
     //v-sheet( id="scrolling-techniques" class="overflow-hidden" max-height="120" )
     //  v-container( style="height: 100px;" )
 </template>
