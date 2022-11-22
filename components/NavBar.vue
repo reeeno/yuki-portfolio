@@ -1,33 +1,66 @@
 <template lang="pug">
-  v-card( color='white' elevation="0" )
-    v-app-bar( app fluid color="white" elevation="0" scroll-target="#scrolling-techniques" )
-      nuxt-link( to="/" class="pa-5")
-        nuxt-logo
-      v-spacer
-      nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/'}" to="/" ) Home
-      nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/works'}" to="/works" ) Work
-      nuxt-link( class="navButton ma-3 hover-underline-animation" v-bind:class="{'hover-after':$route.path === '/playground'}" to="/playground" ) Playground
-      v-btn( icon style="text-decoration: none;" class="ma-n2" href="https://www.instagram.com/ikkkkyui/" )
-        v-icon( small ) mdi-instagram
-      v-btn( icon style="text-decoration: none;" class="ml-n2 mr-3" href="https://www.linkedin.com/in/yutian-yuki-liu/" )
-        v-icon( small ) mdi-linkedin
-    //v-sheet( id="scrolling-techniques" class="overflow-hidden" max-height="120" )
-    //  v-container( style="height: 100px;" )
+  v-app-bar( app fluid ref="navBar" v-scroll="getHeight" color="white" elevation=0 prominent shrink-on-scroll )
+    nuxt-link( to="/" class="pa-3")
+      nuxt-logo
+    v-app-bar-title( v-text="height" )
+    v-spacer
+    div( :class="{'navButtonGroupShrunk':this.height < 57}" )
+      nuxt-link(
+        class="navButton hover-underline-animation"
+        :class="{'hover-after':$route.path === '/', 'navButtonShrunk':this.height < 57, 'mx-4':this.height < 57, 'ma-3':this.height >=57}" to="/"
+        @click.native="resetHeight($route.path)"
+      ) Home
+      nuxt-link(
+        class="navButton hover-underline-animation"
+        :class="{'hover-after':$route.path === '/works', 'navButtonShrunk':this.height < 57, 'mx-4':this.height < 57, 'ma-3':this.height >=57 }" to="/works"
+        @click.native="resetHeight"
+      ) Work
+      nuxt-link(
+        class="navButton hover-underline-animation"
+        :class="{'hover-after':$route.path === '/playground', 'navButtonShrunk':this.height < 57, 'mx-4':this.height < 57, 'ma-3':this.height >=57}" to="/playground"
+        @click.native="resetHeight"
+      ) Playground
+    v-btn( icon class="navButton ml-n2 mr-n2" href="https://www.instagram.com/ikkkkyui/" )
+      v-icon( :size="this.height < 57 ? 16 : 20" ) mdi-instagram
+    v-btn( icon class="navButton ml-n2 mr-3" href="https://www.linkedin.com/in/yutian-yuki-liu/" )
+      v-icon( :size="this.height < 57 ? 16 : 20" ) mdi-linkedin
 </template>
 
 <script>
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  data: () => ({
+    height: 9999,
+    currPath: '/'
+  }),
+  methods: {
+    getHeight () {
+      this.height = this.height === 9999 && this.$route.path !== '/' ? this.height : this.$refs.navBar.computedHeight
+    },
+    resetHeight () {
+      this.height = 9999
+    }
+  }
 }
 </script>
 
 <style scoped>
+.navButtonGroupShrunk1 {
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
 .navButton {
   color: black;
   text-decoration: none;
-  font-size:13px;
   font-family: 'Alice', serif;
   font-weight: 500;
+  font-size:16px;
+}
+
+.navButtonShrunk {
+  font-size: 13px;
+  margin-top: 14px;
 }
 
 .v-btn i:hover{

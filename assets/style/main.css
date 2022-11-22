@@ -2,34 +2,54 @@
   background-color: #E0E2ED;
 }*/
 
+/* Typography */
 h1, h2, h3, h4, h5 {
   font-family: 'IM Fell English', serif;
   font-weight: 400;
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 90px;
 }
 
 h2 {
-  font-size: 45px;
+  font-size: 80px;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 70px;
 }
 
 h4 {
-  font-size: 35px;
+  font-size: 60px;
 }
 
 h5 {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 p {
   font-family: 'Alice', serif;
   font-weight: 400;
+}
+
+.p1 {
+  font-size: 1.5rem;
+}
+
+.p2 {
+  font-size: 1.1rem;
+}
+
+.p3 {
+  font-size: 1rem;
+}
+
+/* Buttons */
+.primaryButton {
+  font-family: 'Alice', serif;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 /* Disable ripple effects on all buttons */

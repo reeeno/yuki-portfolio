@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container
+  v-container( fluid )
     v-row( justify="center" align="center" )
       nuxt-img( src="/images/snow.png" width="250"  id="cloud" @click="snowing = !snowing" )
     div( v-show="snowing" class="snowflakes" aria-hidden="true" )
