@@ -2,7 +2,6 @@
   v-app-bar( app fluid ref="navBar" v-scroll="getHeight" color="white" elevation=0 prominent shrink-on-scroll )
     nuxt-link( to="/" class="pa-3")
       nuxt-logo
-    v-app-bar-title( v-text="height" )
     v-spacer
     div( :class="{'navButtonGroupShrunk':this.height < 57}" )
       nuxt-link(
@@ -31,7 +30,6 @@ export default {
   name: 'NavBar',
   data: () => ({
     height: 9999,
-    currPath: '/'
   }),
   methods: {
     getHeight () {
